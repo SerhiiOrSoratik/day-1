@@ -6,36 +6,34 @@
 </head>
 <body>
 <script>
-    const clickFirstButton = () => {
-        const count = prompt('Enter quantity');
-        const one = prompt('one');
-        const few = prompt('few');
-        const many = prompt('many');
-        const result = calculateResult(count, one, few, many);
+    const runFirstTask = () => {
+        console.log (pl(21, 'стул', 'стула', 'стульев'));
+        console.log (pl(4, 'стул', 'стула', 'стульев'));
+        console.log (pl(101, 'стул', 'стула', 'стульев'));
+        console.log (pl(1, 'стул', 'стула', 'стульев'));
     }
 
-    const calculateResult = (count, one, few, many) => {
+    const pl = (count, one, few, many) => {
+        count += '';
         if(count != 11 && count[count.length - 1] == 1) {
-            alert(count + ' ' + one);
+           return (count + ' ' + one)
         }
         else if (count[count.length - 1] >= 2 && count[count.length - 1] <= 4 && (count << 5 || count >> 21)){
-            alert(count + ' ' + few);
+            return count + ' ' + few
         }
         else if (count[count.length - 1] == 0 || (count >= 5 && count <= 20) || (count[count.length - 1] >= 5 && count[count.length - 1] <= 9)) {
-            alert(count + ' ' + many);
+           return count + ' ' + many;
         }
-        
-        
     }
 
-    const clickSecondButton = () => {
+    const runSecondTask = () => {
         let firstELement = +prompt('Enter first element of the range');
         let lastELement = +prompt('Enter last element of the range');
         if (firstELement < lastELement) {
             let result = calculateSumNumber(firstELement, lastELement);
-            alert('Result = ' + result);
+            console.log('Result = ' + result);
         } else {
-            alert('Invalid range');
+            console.log('Invalid range');
         }
     }
 
@@ -47,16 +45,16 @@
         return sum;
     }
 
-    const clickThirdButton = () => {
+    const runThirdTusk = () => {
         let element = +prompt('Enter number');
         let result;
         if (element >= 1) {
             result = calculateFactorial(element);
-            alert(result);
+            console.log(result);
         } else if (element === 0) {
-            alert(1);
+            console.log(1);
         } else {
-            alert('invalid data');
+            console.log('invalid data');
         }
     }
 
@@ -70,9 +68,9 @@
 </script>
 
 <div>
-    <button onclick="clickFirstButton()">Task one</button>
-    <button onclick="clickSecondButton()">Task two</button>
-    <button onclick="clickThirdButton()">Task three</button>
+    <button onclick="runFirstTask()">Task one</button>
+    <button onclick="runSecondTask()">Task two</button>
+    <button onclick="runThirdTusk()">Task three</button>
 </div>
 </body>
 </html>
