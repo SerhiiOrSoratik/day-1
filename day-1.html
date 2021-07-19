@@ -7,10 +7,10 @@
 <body>
 <script>
     const clickSecondButton = () => {
-        firstELement = +prompt('Enter first element of the range');
-        lastELement = +prompt('Enter last element of the range');
-        let result = calculateSumNumber(firstELement, lastELement);
-        if (result != null) {
+        let firstELement = +prompt('Enter first element of the range');
+        let lastELement = +prompt('Enter last element of the range');
+        if (firstELement < lastELement) {
+            let result = calculateSumNumber(firstELement, lastELement);
             alert('Result = ' + result);
         } else {
             alert('Invalid range');
@@ -18,21 +18,39 @@
     }
 
     const calculateSumNumber = (firstElement, lastElement) => {
-        if (firstElement >= lastElement) {
-            return null;
-        }
         let sum = 0;
         for (let i = firstElement; i <= lastElement; i++) {
             sum += i;
         }
         return sum;
     }
+
+    const clickThirdButton = () => {
+        let element = +prompt('Enter number');
+        let result;
+        if (element >= 1) {
+            result = calculateFactorial(element);
+            alert(result);
+        } else if (element === 0) {
+            alert(1);
+        } else {
+            alert('invalid data');
+        }
+    }
+
+    const calculateFactorial = (element) => {
+        let result = 1;
+        for (let i = 1; i <= element; i++) {
+            result *= i;
+        }
+        return result;
+    }
 </script>
 
 <div>
     <button>Task one</button>
     <button onclick="clickSecondButton()">Task two</button>
-    <button>Task three</button>
+    <button onclick="clickThirdButton()">Task three</button>
 </div>
 </body>
 </html>
