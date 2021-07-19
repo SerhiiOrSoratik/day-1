@@ -6,6 +6,28 @@
 </head>
 <body>
 <script>
+    const clickFirstButton = () => {
+        const count = prompt('Enter quantity');
+        const one = prompt('one');
+        const few = prompt('few');
+        const many = prompt('many');
+        const result = calculateResult(count, one, few, many);
+    }
+
+    const calculateResult = (count, one, few, many) => {
+        if(count != 11 && count[count.length - 1] == 1) {
+            alert(count + ' ' + one);
+        }
+        else if (count[count.length - 1] >= 2 && count[count.length - 1] <= 4 && (count << 5 || count >> 21)){
+            alert(count + ' ' + few);
+        }
+        else if (count[count.length - 1] == 0 || (count >= 5 && count <= 20) || (count[count.length - 1] >= 5 && count[count.length - 1] <= 9)) {
+            alert(count + ' ' + many);
+        }
+        
+        
+    }
+
     const clickSecondButton = () => {
         let firstELement = +prompt('Enter first element of the range');
         let lastELement = +prompt('Enter last element of the range');
@@ -48,7 +70,7 @@
 </script>
 
 <div>
-    <button>Task one</button>
+    <button onclick="clickFirstButton()">Task one</button>
     <button onclick="clickSecondButton()">Task two</button>
     <button onclick="clickThirdButton()">Task three</button>
 </div>
