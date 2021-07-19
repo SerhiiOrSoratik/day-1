@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    const clickSecondButton = () => {
+        firstELement = +prompt('Enter first element of the range');
+        lastELement = +prompt('Enter last element of the range');
+        let result = calculateSumNumber(firstELement, lastELement);
+        if (result != null) {
+            alert('Result = ' + result);
+        } else {
+            alert('Invalid range');
+        }
+    }
+
+    const calculateSumNumber = (firstElement, lastElement) => {
+        if (firstElement >= lastElement) {
+            return null;
+        }
+        let sum = 0;
+        for (let i = firstElement; i <= lastElement; i++) {
+            sum += i;
+        }
+        return sum;
+    }
+</script>
+
+<div>
+    <button>Task one</button>
+    <button onclick="clickSecondButton()">Task two</button>
+    <button>Task three</button>
+</div>
+</body>
+</html>
